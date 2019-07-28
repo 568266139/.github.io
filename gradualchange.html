@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change</title>
+    <style type="text/css">
+        *{margin: 0;
+        padding: 0;}
+        #warp{
+            width: 30px;
+            height: 300px;
+            border: 1px solid;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #warp > #indner{
+            height: 600px;
+            background: repeating-linear-gradient(130deg, #ce0900 0px, #1b2dce 10px, #ffffff 10px, white 20px);
+        }
+    </style>
+    <script type="application/javascript">
+        var float=0;
+        setInterval(function(){
+            float++;
+            if(float<300){
+                document.querySelector("#indner").style.marginTop=-float+"px";
+            }else{
+                float=0;
+            }
+        },60)
+        
+        function cc() {
+
+        }
+    </script>
+</head>
+<body>
+<div id="warp">
+    <div id="indner"> </div>
+</div>
+</body>
+</html>
