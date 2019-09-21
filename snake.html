@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>snake</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .game {
+            width: 800px;
+            height: 800px;
+            margin: 30px auto;
+
+        }
+
+        .gameui {
+            width: 800px;
+            height: 100px;
+            background: cornflowerblue;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gamefont {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .gamefont span {
+            line-height: 100px;
+            font-size: 40px;
+            color: rgb(223, 65, 65);
+        }
+
+        .gamestar {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .gamestar button {
+            width: 150px;
+            height: 80px;
+            margin-top: 10px;
+            font-size: 27px;
+            background: crimson;
+            color: rgb(255, 255, 255);
+        }
+
+        .gamescore {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .gamescore span {
+            line-height: 100px;
+            font-size: 40px;
+            color: rgb(223, 65, 65);
+        }
+
+        .gamemap {
+            width: 800px;
+            height: 600px;
+            background: fuchsia;
+            display: flex;
+            position: relative;
+        }
+
+        #snake-game {
+            width: 20px;
+            height: 20px;
+            background: darkred;
+            position:absolute;
+            left: 0;
+            top: 0;
+           
+        }
+
+        #fodd-game{
+            width: 20px;
+            height: 20px;
+            background: darkturquoise;
+            position: absolute;
+            left: 20px;
+            top:20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="game">
+        <div class="gameui">
+            <div class="gamefont">
+                <span>贪吃蛇</span>
+            </div>
+            <div class="gamestar">
+                <button>开始游戏</button>
+            </div>
+            <div class="gamescore">
+                <span>分数：</span>
+            </div>
+        </div>
+        <div class="gamemap">
+            <div class="snake" id="snake-game"></div>
+            <div class="food" id="fodd-game"></div>
+        </div>
+    </div>
+    <script>
+        //需要用到的全局变量
+
+        //获取节点对象
+        var snakegame=document.getElementById("snake-game");
+        var foddgame=document.getElementById("food-game");
+
+
+        //生成小蛇，向左前进一格
+        function gamesnakeleft() {
+           if(snakegame.offsetLeft>0)
+           {
+                snakegame.style.left = snakegame.offsetLeft-20+"px";
+           }
+        }
+        //生成小蛇，向右前进一格
+        function gamesnakeright() {
+            // console.log("a");
+            console.log(snakegame.offsetLeft);
+           if(snakegame.offsetLeft<780)
+           {
+              
+                snakegame.style.left = snakegame.offsetLeft+20+"px";
+           }
+        }
+        //生成小蛇，向下前进一格
+        function gamesnakebuttom() {
+            // console.log("a");
+            console.log(snakegame.offsetTop);
+           if(snakegame.offsetTop<580)
+           {
+              
+                snakegame.style.top = snakegame.offsetTop+20+"px";
+           }
+        }
+        //生成小蛇,向上前进一格
+        function gamesnaketop() {
+            // console.log("a");
+            console.log(snakegame.offsetTop);
+           if(snakegame.offsetTop>0)
+           {
+              
+                snakegame.style.top = snakegame.offsetTop-20+"px";
+           }
+        }
+    //控制小蛇前进方向
+    document.onkeydown=function(e){
+      console.log(e.keyCode);
+      switch(e.keyCode){
+          case 39: setInterval(gamesnakeright,500);
+         break;
+         case 38:setInterval(gamesnaketop,500);break;
+        case 37:setInterval(gamesnakeleft,500);break;
+        case 40:setInterval(gamesnakebuttom,500);break;
+      }
+      
+    }
+    //随机游戏地图内生成食物
+    //小蛇吃到食物
+    </script>
+</body>
+
+</html>
