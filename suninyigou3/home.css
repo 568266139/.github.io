@@ -1,0 +1,433 @@
+/* body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000} */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*导航栏  */
+.box-center {
+    width: 100%;
+    margin: auto;
+    background: #f5f5f5;
+}
+
+.menu {
+    width: 1200px;
+    margin: auto;
+    height: 35px;
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.menu ul {
+    display: block;
+
+    
+}
+
+.menu li {
+   
+    float: left;
+    /* margin-right: 20px; */
+    line-height: 35px;
+    height: 35px;
+    font-size: 12px; 
+    color: #666666;
+
+}
+
+.menu-ul li {
+    width: 85px;
+    text-align: center;
+    position: relative;
+   
+
+}
+
+.menu li div:nth-child(1) {
+    color: rgb(121, 116, 116);
+    font-size: 13px;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+.menu li div:nth-child(1) i {
+    position: relative;
+    top: 4px;
+    font-size: 15px;
+}
+
+.bfont {
+    font-size: 1px;
+    position: relative;
+    top: 2px;
+    color: rgb(171, 172, 173);
+}
+
+.munu-daohang {
+    width: 900px;
+    height: 0;
+    overflow: hidden;
+    /* float: left; */
+
+    /* display: none; */
+    text-align: left;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li:hover .menu-dh::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.menu li:hover .menu-dh {
+    border: 1px rgb(171, 172, 173) solid;
+    border-bottom: none;
+    background: white;
+    position: relative;
+    /* top: 1px; */
+    z-index: 2;
+}
+
+.menu li:hover .munu-daohang {
+    /* display: flex; */
+    position: absolute;
+    border: 1px rgb(216, 207, 207) solid;
+    height: 220px;
+    /* overflow: visible; */
+    background: white;
+    z-index: 2;
+    padding: 20px;
+    transition: height .3s;
+}
+
+/* 导航条表格布局 */
+
+.mune-box {
+    margin-right: 50px;
+    /* margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px; */
+}
+
+.mune-box h3 {
+    color: #333333;
+    font-size: 14px;
+    font-weight: initial;
+
+}
+
+.secttiontable-ul li {
+    width: 120px;
+    height: 30px;
+    text-align: left;
+    font-size: 10px;
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.secttiontable-ul li a {
+
+    color: #666666;
+    font-size: 12px;
+    /* margin-right: 5px; */
+}
+
+.secttiontable-ul li a:hover {
+    color: #ff6600;
+}
+
+.shangjia{
+    width: 170px;
+    height: 0;
+    overflow: hidden;
+    /* display: flex; */
+  /* float: left; */
+}
+.menu-sj{
+    height: 100%;
+    
+}
+
+.menu-ul-li:hover .menu-sj::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #ffffff;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.menu-ul-li:hover .menu-sj{
+    border: 1px rgb(171, 172, 173) solid;
+    border-bottom: none;
+    background: white;
+    position: relative; 
+     /* top: 1px;  */
+    z-index: 2;
+    /* position: relative; */
+}
+
+.menu-ul-li:hover .shangjia{
+    height: 150px;
+    border: 1px rgb(216, 207, 207) solid;
+    
+    transition: height .3s;
+   position: absolute; 
+    /* top:28px; */
+    background: white;
+    z-index: 0;
+}
+
+.shangjia-ul li p{
+    width: 100%;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.shangjia-ul li p a{
+    margin: 0 10px;
+    color: #666666;
+    font-size: 12px;
+}
+.shangjia-ul li p a:hover{
+    color: #ff6600;
+}
+.shangjia-ul li {
+width: 100%;
+margin: 0;
+}
+
+.menukf{
+    height: 100%;
+    width: 100%;
+}
+.menu .menu-ul .menu-ul-li:hover .menukf{
+    border: 1px rgb(171, 172, 173) solid;
+    border-bottom: none;
+    background: white;
+    position: relative;
+}
+.menu .menu-ul .menu-ul-li:hover .menukf::after{
+    width: 100%;
+    height: 1px;
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background: rgb(255, 254, 254);
+    z-index: 2;
+}
+.menukefu{
+    width: 170px;
+    position: absolute;
+    left: -87px;
+    height: 0px;
+    overflow: hidden;
+    background:white;
+}
+.menukefu .menukefu-ul li{
+   width: 100%;
+}
+.menukefu .menukefu-ul li p{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.menukefu .menukefu-ul li p a{
+    margin: 0 10px;
+    color: #666666;
+    font-size: 12px;
+}
+.menukefu .menukefu-ul li p a:hover{
+    color: #ff6600;
+}
+
+.menu .menu-ul .menu-ul-li:hover .menukefu{
+    border: 1px rgb(216, 207, 207) solid;
+    position: absolute;
+    height: 150px;
+    transition: height .3s;
+
+}
+
+.menu-ul-li a:hover{
+    color: #ff6600;
+}
+.menu-ul-li a{
+    color: #666666;
+    font-size: 12px;
+}
+.menu-zhuche a{
+    color: #ff6600;
+}
+
+/* search */
+.search{
+    width: 100%;
+}
+.shousuo{
+width: 1200px;
+/* height: 110px; */
+margin: 8px auto ;
+display: flex;
+justify-content: space-between;
+}
+.shousuo-img img{
+    width: 190px;
+    height: 90px;
+}
+.shousuo-kuang{
+    margin: auto;
+    position: relative;
+    left: -50px;
+}
+.shousuo-kuang-top{
+    border: 2px #ff9900 solid;
+   
+}
+.shousuo-kuang-top input:nth-of-type(1){
+    width: 400px;
+    height: 20px;
+    border: 1px white solid;
+    outline: none;
+}
+.shousuo-kuang-top input:nth-of-type(2){
+    width: 120px;
+    height: 36px;
+    background: #ff9900;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    font-weight: bolder;
+
+}
+.shousuo-kuang-top input:nth-of-type(2):hover{
+    background:#ff8800 ;
+ cursor: pointer;
+}
+.shousuo-kuang-top i{
+    color: #cccccc;
+    font-size:20px ;
+  position: relative;
+  top: 2px;
+    
+}
+.shousuo-kuang-tishi a{
+font-size: 12px;
+color: #999999;
+margin-right: 7px;
+padding-right: 8px;
+border-right: 1px #ddd solid;
+}
+.all-shangping{
+    width: 100%;
+    
+}
+.all-shangping-box{
+    width: 1200px;
+    height: 38px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.shangping-box-left{
+    width: 190px;
+    height: 38px;
+    background: #ff9900;
+}
+.shangping-box-left p{
+    width: 100%;
+    /* height: 38px; */
+    color: white;
+    line-height: 38px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+}
+.shangping-box-left p i{
+    width: 12px;
+    height: 12px;
+    margin: 14px 8px;
+    
+    display: block;
+    
+    float: left;
+   background: url('//res.suning.cn/project/cmsWeb/suning/homepage/v6/css/images/index.png?v=2019091901');
+}
+.shangping-box-right{
+    height: 38px;
+}
+.shangping-box-ul{
+    
+}
+.shangping-box-ul li{
+    float: left;
+    
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    margin-left: 30px;
+    /* position: relative; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+.li a{
+    position: relative;
+    top: -6px;
+}
+
+.shangping-box-ul li>a{
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+}
+.shangping-box-ul li span{
+    /* position: absolute;
+    top: 0px; */
+    background: url(//res.suning.cn/project/cmsWeb/suning/homepage/v6/css/images/index.png?v=2019091901);
+    width: 25px;
+    height: 8px;
+    display: block;
+    background-position: -37px 0;
+}
+.shangping-fontimg{
+    background: url('//res.suning.cn/project/cmsWeb/suning/homepage/v6/css/images/index.png?v=2019091901');
+    background-position: -345px -213px;
+    width: 14px;
+    height: 17px;
+    display: block;
+    float: left;
+    position: absolute;
+    top: -5px;
+    left: 62px;
+    
+}
+.shangping-box-ul li>a:hover{
+    color: #ff6600;
+}
