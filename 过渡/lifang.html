@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 500px;
+            margin: auto;
+            height: 500px;
+            /* float: left; */
+            position: relative;
+            border: 1px brown solid;
+            margin-top: 20px;
+            /* transform: rotateY(30deg); */
+        }
+
+        .boxx {
+            width: 300px;
+            margin: auto;
+            height: 300px;
+            /* float: left; */
+            position: relative;
+            border: 1px brown solid;
+            margin-top: 20px;
+        }
+
+        .boxx:hover {
+            transform: rotateX(360deg);
+            transition: all 2s;
+        }
+
+
+
+
+
+        .box1 {
+            width: 100px;
+            height: 150px;
+            background: rgba(100, 148, 238);
+            float: left;
+            position: absolute;
+            transform: rotateZ(60deg) rotateY(60deg);
+            /* transform:translateX(30deg); */
+            /* transform: rotateY(-60deg); */
+            /* transform: rotate3d(0,0,60deg);   */
+            transform-style: preserve-3d;
+            left: 100px;
+            top: 50px;
+
+        }
+
+        .box2 {
+            width: 100px;
+            height: 150px;
+            background: rgba(218, 26, 26);
+            float: left;
+            position: absolute;
+            transform: rotateZ(60deg) rotatey(60deg) rotateX(152deg);
+        }
+
+        .box-ti{
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            position: relative;
+            transform: rotateX(30deg)rotateY(30deg);
+            transform-style: preserve-3d;
+            animation:name 50s;
+        }
+        .box-ti:hover{
+            transform: rotateX(380deg)rotateY(380deg);
+            transition: all 5s;
+        }
+        @keyframes name{
+        from{
+            transform: rotateX(30deg)rotateY(30deg);
+        }
+        to{
+            transform: rotateX(3800deg)rotateY(3800deg)rotateZ(3800deg);
+        }
+    }
+        .box-ti div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+        .top {
+            background: rgb(235, 4, 4);
+           transform-origin: top;
+           transform: rotateX(90deg);
+           
+        }
+
+        .left {
+            transform-origin: left;
+           transform: rotateY(-90deg);
+            background: rgb(54, 31, 153);
+        }
+
+        .right {
+            transform-origin: right;
+           transform: rotateY(90deg);
+            background: rgb(16, 192, 16);
+        }
+        .qian{
+            background: rgb(231, 235, 4);
+            transform: translateZ(200px)
+        }
+        .hou{
+            background: rgb(84, 197, 201);
+        }
+        .bottom{
+            background: rgb(121, 2, 172);
+            transform-origin: bottom;
+           transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxx">
+        <div class="box1">
+            <div class="box2"></div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="box-ti">
+        <div class="top">top</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="qian">qian</div>
+        <div class="hou">hou</div>
+        <div class="bottom">bottom</div>
+    </div>
+</body>
+
+</html>

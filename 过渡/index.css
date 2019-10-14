@@ -1,0 +1,143 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.foot-empty {
+    height: 200px;
+    display: block;
+    clear: both;
+}
+
+.clear {
+    clear: both;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: #999;
+    transition: width .2s, height 0.2s 0.2s;
+}
+
+.box:hover {
+    width: 200px;
+    height: 200px;
+}
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    background: #f1f1f1;
+    margin-top: 50px;
+    position: relative;
+}
+
+.box2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    background: #f30;
+    transition: width .2s;
+}
+
+.box2:hover::after {
+    width: 100%;
+}
+
+.box3 {
+    width: 200px;
+    height: 200px;
+    background: #f1f1f1;
+    margin-top: 50px;
+    position: relative;
+}
+
+.box3 .movebox {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0px;
+    background: #f30;
+    overflow: hidden;
+    text-align: center;
+    line-height: 200px;
+    transition: height .2s;
+}
+
+.box3 .movebox2 {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0px;
+    background: #f30;
+    overflow: hidden;
+    text-align: center;
+    line-height: 200px;
+    transition: height .2s;
+}
+
+.box3 .movetext {
+    position: relative;
+    z-index: 2;
+    display: none;
+}
+
+.box3:hover .movebox {
+    height: 50%;
+    background: rgba(255, 100, 0, 0.6);
+}
+
+.box3:hover .movebox2 {
+    height: 50%;
+    background: rgba(255, 100, 0, 0.6);
+}
+
+.box3:hover .movetext {
+    display: block;
+}
+
+.box4 {
+    width: 200px;
+    height: 200px;
+    background: #f1f1f1;
+    margin-top: 50px;
+    position: relative;
+    float: left;
+}
+
+.box4:hover {
+    transition: all .2s;
+    transform: rotate(360deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+}
+
+.box7,
+.box8 {
+    width: 200px;
+    height: 200px;
+    /* margin-left: 100px; */
+    background: cornflowerblue;
+    /* transform: rotateY(60deg); */
+    /* transform: skewX(60deg); */
+}
+
+.box7 {
+    transform: rotateX(20deg) rotateZ(30deg) translateZ(20px);
+}
+
+.box8 {
+    background: url(img.png) center center no-repeat;
+    margin-top: -200px;
+    margin-left: 10px;
+    /* background: #f30; */
+    /* transform: rotateX(60deg); */
+    transform: rotateX(60deg) rotateZ(30deg) translateZ(40px);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		 #d4{
+            	height: 180px;width: 180px;/*容器大小*/
+            	position: relative;/*相对定位*/
+            	margin: 200px auto;/*上下300,左右对齐*/
+            	transform: rotateX(30deg)rotateY(30deg);/*容器初始旋转角度*/
+            	transform-style: preserve-3d;/*容器内元素随容器一起转*/
+            	animation: name 10s infinite ;/*设置旋转方式*/
+            }
+            @-webkit-keyframes name{
+            	from{transform:rotateX(30deg) rotateY(30deg);}/*设置旋转起点*/
+            	to{transform:rotateX(30deg)  rotateY(390deg);}/*设置旋转终点*/
+            }
+            #d4 div{
+            	height: 180px;width: 180px;/*设置所有元素的大小*/
+	   	    	position: absolute;/*绝对定位*/
+	   	    	font-size: 70px;/*元素内字体大小*/
+                border: 20px red double;/*设置元素边框*/
+                line-height:180px ;/*设置文字高度与父级元素相等*/
+                text-align: center;/*设置文字水平居中*/
+            }
+	   	    #d4 div:nth-child(1){
+                transform: rotateY(90deg);/*旋转方式*/
+                transform-origin: right; /*以矩形右边框为Y轴*/
+	   	    }
+	   	    #d4 div:nth-child(2){
+	   	    }
+
+	   	    #d4 div:nth-child(3){
+                transform: rotateY(-90deg);
+                transform-origin: left;/*以矩形左边框为Y轴*/
+	   	    }
+	   	    #d4 div:nth-child(4){
+                transform: translateZ(220px);/*沿Z轴平移*/
+	   	    }
+	   	    #d4 div:nth-child(5){
+                transform: rotateX(-90deg);
+                transform-origin: bottom; /*以矩形上边框为Y轴*/
+	   	    }
+	   	    #d4 div:nth-child(6){
+                transform: rotateX(90deg);
+                transform-origin: top; /*以矩形下边框为Y轴*/
+	   	    }
+	</style>
+	<body>
+		<div id="d4">
+			   <div >1</div>
+			   <div >2</div>
+			   <div >3</div>
+			   <div >4</div>
+			   <div >5</div>
+			   <div >6</div>
+		</div>
+	</body>
+</html>
