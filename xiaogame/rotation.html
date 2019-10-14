@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rotationchat</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px skyblue solid;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chat {
+            width: 500px;
+            height: 500px;
+            margin: auto;
+        }
+
+        #box2 {
+            width: 500px;
+            position: relative;
+            transition: top 2s;
+            top: 0;
+        }
+
+        .chat img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chebox {
+            width: 500px;
+            height: 10px;
+            position: absolute;
+            top: 470px;
+            /* background: aquamarine; */
+            /* flex布局 */
+            display: flex;
+            align-items: center;
+            /* 两端对齐 */
+            justify-content: space-around;
+        }
+
+        .checkeds {
+            width: 10px;
+            height: 10px;
+            background: beige;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="box2">
+            <div class="chat"> <img src="img/chat1.jpg"></div>
+            <div class="chat"> <img src="img/chat2.jpg"></div>
+            <div class="chat"> <img src="img/chat3.jpg"></div>
+            <div class="chat"> <img src="img/chat4.jpg"></div>
+            <div class="chat"> <img src="img/chat5.jpg"></div>
+        </div>
+        <div class="chebox">
+            <a href="#">
+                <div class="checkeds"></div>
+            </a>
+            <a href="#">
+                <div class="checkeds"></div>
+            </a>
+            <a href="#">
+                <div class="checkeds"></div>
+            </a>
+            <a href="#">
+                <div class="checkeds"></div>
+            </a>
+            <a href="#">
+                <div class="checkeds"></div>
+            </a>
+
+        </div>
+    </div>
+</body>
+<script>
+
+    //定时事件
+    console.log("执行定时事件");
+    var times = setInterval(yidong, 3000);
+
+
+    //轮播图片
+    var num = 0;
+    function yidong() {
+        if (num > -2000) {
+            num = num - 500;
+            console.log(num);
+            document.getElementById("box2").style.top = num + "px";
+        }
+        else {
+            num = 0;
+            document.getElementById("box2").style.top = num + "px";
+        }
+    }
+   //拿取按钮
+    var che = document.getElementsByClassName("checkeds");
+
+    //鼠标移入
+    for (let i = 0; i < che.length; i++) {
+        che[i].addEventListener("mouseover", function () {
+            console.log("停止");
+            //停止事件
+            clearInterval(times);
+            //转到第i个图片
+            // num=-500*i;
+            // document.getElementById("box2").style.top = num + "px";
+        })
+    }
+
+    //鼠标移出
+    for (let i = 0; i < che.length; i++) {
+        che[i].addEventListener("mouseout", function () {
+            console.log("继续");
+            //继续事件
+            times= setInterval(yidong, 3000);
+        })
+    }
+    //鼠标点击
+    for (let i = 0; i < che.length; i++) {
+        che[i].addEventListener("click", function () {
+            console.log(i);
+            
+            clearInterval(times);
+            num=-500*i;
+            document.getElementById("box2").style.top = num + "px";
+            
+        })
+    }
+</script>
+
+</html>

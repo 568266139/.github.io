@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>encapsulation</title>
+    <style>
+    .box { background: #f30;}
+    </style>
+</head>
+
+<body>
+
+
+    <div class="box" id="box">
+
+        <a href="javascript:;" class="prevbtn"></a>
+    </div>
+
+    <div class="box" id="box2"></div>
+
+    <script>
+    
+    function banner(option){
+
+        var _this = this; //1
+
+        this.elSeletor = "#box"; //2
+        
+        this.width = "100px"; //3
+        this.height = "200px";
+
+        //4
+        if(option){
+            if(option.elSeletor) this.el = option.el;
+            if(option.width) this.width = option.width;
+            if(option.height) this.height = option.height;
+        }
+
+        //5
+        this.el = document.querySelector(this.elSeletor);
+        this.prevbtn = document.querySelector(this.elSeletor + " .prevbtn");
+
+
+        //6
+        this.show2 = function(){
+            this.el.style.width = this.width;
+            this.el.style.height = this.height;
+            //console.log( this.height );
+        }
+
+        this.prevbtn.onclick = function(){
+            console.log(this);
+            console.log(_this.width);
+        }
+
+        //7
+        this.show2();
+
+    }
+
+    //banner();
+
+    var mybanner = new banner({
+        el: "#box",
+        width:"300px",
+        height:"800px"
+    });
+
+    var mybanner2 = new banner({
+        el: document.getElementById("box2"),
+        width:"500px",
+        height:"200px"
+    });
+    //mybanner.height = "300px";
+    //mybanner.width = "300px";
+    //mybanner.show2();
+
+    </script>
+
+</body>
+
+</html>

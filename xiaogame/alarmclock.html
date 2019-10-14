@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>alarmclock</title>
+    <style type="text/css">
+    *{margin: 0;
+    padding: 0;}
+
+    #warp{
+        width: 500px;
+        height: 500px;
+        /* background: cornflowerblue; */
+        border: 20px cornflowerblue solid;
+        margin: 100px auto;
+        border-radius: 50%;
+        position: relative;
+    }
+    #scale{
+     
+        height: 500px;
+        list-style: none;
+        
+    }
+    #scale li{
+        transform-origin: center 250px;
+        width: 10px;
+        height: 10px;
+        /* background: cornflowerblue; */
+        position: absolute;
+        left: 248px;
+        top: 0;
+    }
+    
+    #scale li:nth-of-type(1){
+            transform: rotate(30deg);
+    }
+    #scale li:nth-of-type(2){
+            transform: rotate(60deg);
+    }
+    #scale li:nth-of-type(3){
+            transform: rotate(90deg);
+    }
+    #scale li:nth-of-type(4){
+            transform: rotate(120deg);
+    }
+    #scale li:nth-of-type(5){
+            transform: rotate(150deg);
+    }
+    #scale li:nth-of-type(6){
+            transform: rotate(180deg);
+    }
+    #scale li:nth-of-type(7){
+            transform: rotate(210deg);
+    }
+    #scale li:nth-of-type(8){
+            transform: rotate(240deg);
+    }
+    #scale li:nth-of-type(9){
+            transform: rotate(270deg);
+    }
+    #scale li:nth-of-type(10){
+            transform: rotate(300deg);
+    }
+    #scale li:nth-of-type(11){
+            transform: rotate(330deg);
+    }
+    #scale li:nth-of-type(12){
+            transform: rotate(360deg);
+    }
+     #hour{
+         width: 10px;
+         height: 160px;
+         background: rgb(22, 22, 24);
+         border-radius: 10px;
+         position: absolute;
+         left: 245px;
+         top: 90px;
+
+     
+         transform-origin: center 160px;
+         transform: rotate(0deg);
+     }
+     #min{
+         width: 7px;
+         height: 200px;
+         background: rgb(241, 192, 213);
+         border-radius: 10px;
+         position: absolute;
+         left: 246px;
+         top: 50px;
+         transform-origin: center 200px;
+         transform: rotate(0deg);
+     }
+     #second{
+         width: 5px;
+         height: 250px;
+         background: rgb(230, 11, 120);
+         border-radius: 20px;
+         position: absolute;
+         left: 247px;
+         top: 20px;
+         transform-origin: center 230px;
+         transform: rotate(0deg);
+     }
+     #dot{
+         width: 20px;
+         height: 20px;
+         border-radius: 50%;
+         background: dimgray;
+         position: absolute;
+         left: 240px;
+         top: 240px;
+     }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <ul id="scale">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+        </ul>
+        <div id="hour"></div>
+        <div id="min"></div>
+        <div id="second"></div>
+        <div id="dot"></div>
+    </div>
+    <script>
+    window.setInterval(seconds,1000);
+    function seconds(){
+        //获取当前时间
+       var timess=new Date();
+    //    console.log(timess);
+    //    获取当前秒数并且每秒旋转度数
+       var scond=timess.getSeconds()*6;
+    //    获取当前小时数并且每小时旋转度数
+       var hour=timess.getHours()*30;
+    //    获取当前分钟数并且每分钟旋转度数
+       var min=timess.getMinutes()*6;
+    //    console.log(min);
+    //    console.log(scond);
+    //    console.log(hour);
+    //    console,log(scond);
+//   设置指针转动
+        document.getElementById("second").style.transform="rotate("+scond+"deg)";
+        document.getElementById("min").style.transform="rotate("+min+"deg)";
+        document.getElementById("hour").style.transform="rotate("+hour+"deg)";
+
+    }
+
+    </script>
+</body>
+</html>

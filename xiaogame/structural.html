@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Structural</title>
+    <style>
+        .box {
+            /* width: 800px;
+        height: 300px; */
+            background: cornflowerblue;
+        }
+
+        .box-child1 {
+            width: 200px;
+            height: 300px;
+            background: blueviolet;
+            float: left;
+        }
+
+        .box-child2 {
+            width: 200px;
+            height: 300px;
+            background: rgb(130, 122, 138);
+            float: left;
+        }
+
+        .box-child3 {
+            width: 200px;
+            height: 300px;
+            background: rgb(161, 127, 192);
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-child1"></div>
+        <div class="box-child2"></div>
+        <div class="box-child3"></div>
+    </div>
+    <script>
+        function Encapsulation(width, height, background) {
+            //传值
+            this.width = width;
+            this.height = height;
+            this.background = background;
+           //内部方法
+            this.alate = function () {
+                //输出值
+              
+                alert(this.width);
+                // console.log(tpes);
+            }
+
+            this.alate2 = function () {
+                alert(this.height);
+            }
+
+            this.alate3 = function () {
+                alert(this.background);
+            }
+        }
+
+
+        var box = new Encapsulation(200, 200, "red");
+        box.width=300;
+        
+        box.alate();
+        box.alate2();
+        box.alate3();
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>draw</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 448px;
+            height: 448px;
+            border-radius: 50%;
+            position: relative;
+            margin: auto;
+
+        }
+
+        #boxx {
+            width: 100%;
+            height: 100%;
+            transform-origin: center center;
+            transform: rotate(0deg);
+            /* transition: transform 5s; */
+
+        }
+
+        .boxchild {
+            width: 174px;
+            height: 228px;
+            /* line-height: 448px; */
+            position: absolute;
+            top: 90px;
+            left: 140px;
+        }
+
+        .boxchild img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="img/turntable2.png" alt="抽奖" id="boxx">
+        <div class="boxchild"><img src="img/pointer.png"></div>
+    </div>
+    <script>
+        //扇区度数
+        var degs = 51.5;
+        //停止数
+        var num = 0;
+        //随机数
+        var nums = 0;
+        var i = 10;
+
+        //点击事件
+        document.getElementsByClassName("boxchild")[0].addEventListener("click", function () {
+            lins();
+        });
+        //旋转函数
+        function lins() {
+            var box = document.getElementById("boxx");
+            //获取使用setInterval获取随机旋转角度
+            var timenum = setInterval(function () {
+                //     //判断至少旋转三圈
+                if (Math.floor(nums / 360) < 3) {
+                    // 随机旋转度数
+                    nums = Math.floor(Math.random() * 3600);
+                }
+                else {
+                    //用setInterval每间隔15毫米转动
+                    var timestart = setInterval(function () {
+                        //每次转动1度;
+                        i = i + 1;
+                        box.style.transform = "rotate(" + i + "deg)";
+                        //当转动到随机获取的度数时停止
+                        if (i > nums) {
+                            //初始化当前度数，并保持当前扇区位置
+                            i = i % 360;
+                            clearInterval(timestart);
+                            //调用弹窗
+                            windo();
+                        }
+                    }, 3)
+                    clearInterval(timenum);
+                }
+            }, 15);
+            //初始化随机数
+            nums = 0;
+            // console.log(nums);
+        }
+
+        //弹窗 判断指针指向的扇区位置
+        function windo() {
+            //停留角度
+            num = nums % 360;
+            //判断停留扇区
+            if (Math.floor(num) < degs * 1) {
+                alert("一等奖");
+            }
+            else if (Math.floor(num) < degs * 2) {
+                alert("二等奖");
+
+
+            }
+            else if (Math.floor(num) < degs * 3) {
+                alert("三等奖");
+
+
+            }
+            else if (Math.floor(num) < degs * 4) {
+                alert("四等奖");
+
+
+            }
+            else if (Math.floor(num) < degs * 5) {
+                alert("五等奖");
+
+
+            }
+            else if (Math.floor(num) < degs * 6) {
+                alert("六等奖");
+
+
+            }
+            else if (Math.floor(num) < degs * 7) {
+                alert("未中奖");
+
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
